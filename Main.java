@@ -1,23 +1,27 @@
-// # номер 16
 package com.company;
 import java.util.Scanner;
 public class Main {
-    public static void main(String args[]) {
-        int[] newArray1 = {1, 3, 5};
-        int[] newArray2 = addinArray(newArray1, 5);
-        for (int value : newArray2) {
-            System.out.println(value);
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Введите массив: ");
+        int[] arr = {1, 3, 4, 5};
+        int[] arr2 = swapArr(arr);
+        for (int value: arr2){
+            System.out.print(value);
+
         }
     }
-
-    public static int[] addinArray(int[] arr, int val) {
-        int[] newArr = new int[arr.length + 1];
-        for (int i = 0; i < arr.length; i++) {
-            newArr[i] = arr[i];
-        }
-        System.out.println(newArr.length);
-        newArr[arr.length] = val;
-        return newArr;
+    public static int[] swapArr(int[] arr){
+        int first = arr[0];
+        int last = arr[arr.length-1];
+        arr[0] = last;
+        arr[arr.length-1] = first;
+        return arr;
     }
-
 }
+
+
+
+
+
